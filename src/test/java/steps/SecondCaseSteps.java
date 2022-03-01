@@ -49,38 +49,28 @@ public class SecondCaseSteps {
                         .extract().jsonPath().getInt("total_pages");
     }
 
-    public static void checkCurrectFirstNameSecondCase() {
-        String firstName = given()
-                .spec(REQ_SPEC2)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].first_name");
-
-        Assertions.assertEquals(firstName, "Michael");
+    public static String checkCurrectFirstNameSecondCase() {
+        return given()
+                        .spec(REQ_SPEC2)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].first_name");
     }
 
-    public static void checkCurrectLastNameSecondCase() {
-        String lastName = given()
-                .spec(REQ_SPEC2)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].last_name");
-
-        Assertions.assertEquals(lastName, "Lawson");
+    public static String checkCurrectLastNameSecondCase() {
+        return given()
+                        .spec(REQ_SPEC2)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].last_name");
     }
 
-    public static void checkCurrectEmailSecondCase() {
-        String email = given()
-                .spec(REQ_SPEC2)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].email");
-
-        Assertions.assertEquals(email, "michael.lawson@reqres");
-    }
-
-    public static void checkCurrectCountPages() {
-        Assertions.assertEquals(numberOfPages(), 2);
+    public static String checkCurrectEmailSecondCase() {
+        return given()
+                        .spec(REQ_SPEC2)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].email");
     }
 
 }

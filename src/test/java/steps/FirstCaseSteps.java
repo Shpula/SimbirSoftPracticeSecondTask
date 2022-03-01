@@ -25,34 +25,28 @@ public class FirstCaseSteps {
                         equalTo("george.bluth@reqres.in"));
     }
 
-    public static void checkCurrectFirstNameFirstCase() {
-        String firstName = given()
-                .spec(REQ_SPEC)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].first_name");
-
-        Assertions.assertEquals(firstName, "George");
+    public static String checkCurrectFirstNameFirstCase() {
+        return given()
+                        .spec(REQ_SPEC)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].first_name");
     }
 
-    public static void checkCurrectLastNameFirstCase() {
-        String lastName = given()
-                .spec(REQ_SPEC)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].last_name");
-
-        Assertions.assertEquals(lastName, "Bluth");
+    public static String checkCurrectLastNameFirstCase() {
+        return given()
+                        .spec(REQ_SPEC)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].last_name");
     }
 
-    public static void checkCurrectEmailFirstCase() {
-        String email = given()
-                .spec(REQ_SPEC)
-                .when().get()
-                .then()
-                .extract().jsonPath().getString("data[0].email");
-
-        Assertions.assertEquals(email, "george.bluth@reqres.in");
+    public static String checkCurrectEmailFirstCase() {
+        return given()
+                        .spec(REQ_SPEC)
+                        .when().get()
+                        .then()
+                        .extract().jsonPath().getString("data[0].email");
     }
 }
 
